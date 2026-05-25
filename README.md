@@ -1,6 +1,8 @@
-# rest-intro
+# rest-fundamentals
 
 Curso autodidacta de **REST con Node.js + Express** organizado en dos bloques: **teoría** y **ejercicios prácticos**.
+
+Basado parcialmente en el curso [REST Fundamentals de Pluralsight](https://www.pluralsight.com/) (repo base: [`neuhoffm/ps-rest-fundamentals`](https://github.com/neuhoffm/ps-rest-fundamentals)).
 
 ## Estructura
 
@@ -38,25 +40,38 @@ Cada ejercicio es un **mini-proyecto Node independiente** con su propio `package
 | 01 | [`exercises/01-carved-rock-fitness/`](./exercises/01-carved-rock-fitness/) | Diseñar y construir una API REST para **Carved Rock Fitness**, un retailer de equipamiento outdoor con tres perfiles de usuario (cliente final, cajero, stockroom). Sandbox limpio. |
 | — | [`exercises/ps-rest-fundamentals/`](./exercises/ps-rest-fundamentals/) | **Repo base oficial** del curso [Pluralsight REST Fundamentals](https://github.com/neuhoffm/ps-rest-fundamentals) (autor: `neuhoffm`). Contiene `server/` (backend a programar) y `frontend/` (demo). Las branches están organizadas por módulo: `m3-before` / `m3-after`, `m4-before` / `m4-after`, etc. Usar `git checkout <branch>` para cambiar entre puntos del curso. |
 
-### Cómo usar el repo base del curso
+### Branches del repo (replicadas del upstream)
+
+En lugar de mantener un sub-repo dentro de `exercises/ps-rest-fundamentals/`, este repositorio replica directamente las branches del curso. Cambia de branch desde la raíz para que `exercises/ps-rest-fundamentals/` muestre el estado correspondiente:
+
+| Branch | Estado del subproyecto |
+|--------|------------------------|
+| `main`        | Snapshot por defecto (= `m3-before`). Punto de entrada del repo. |
+| `m3-before`   | Estado inicial del módulo 3 |
+| `m3-after`    | Estado final del módulo 3 (solución del instructor) |
+| `m4-before`   | Estado inicial del módulo 4 |
+| `m4-after`    | Estado final del módulo 4 |
+| `m5-before`   | Estado inicial del módulo 5 |
+| `m5-after`    | Estado final del módulo 5 |
+| `m6-before`   | Estado inicial del módulo 6 |
+| `m6-after`    | Estado final del módulo 6 |
+| `m8-before`   | Estado inicial del módulo 8 |
+| `m8-after`    | Estado final del módulo 8 |
+
+> La teoría (`theory/`) y nuestro sandbox (`exercises/01-carved-rock-fitness/`) se mantienen idénticos en todas las branches. Solo cambia `exercises/ps-rest-fundamentals/`.
 
 ```bash
-cd exercises/ps-rest-fundamentals
-
 # Ver branches disponibles
 git branch -a
 
-# Ir al inicio del módulo 3 (estado inicial)
-git checkout m3-before
+# Saltar al inicio del módulo 5
+git checkout m5-before
 
-# O al final del módulo 3 (solución del instructor)
-git checkout m3-after
-
-# Instalar dependencias del backend
-cd server && npm install
+# Instalar dependencias del backend del curso
+cd exercises/ps-rest-fundamentals/server && npm install
 ```
 
-Requisitos del repo base: **Node.js >= 20**.
+Requisitos del subproyecto: **Node.js >= 20**.
 
 ## Requisitos generales
 
